@@ -32,11 +32,12 @@ textarea{
 
 .row {
   white-space: pre-wrap;
-  height: 100px;
+  height: 115px;
   border-top: 1px solid white;;
   background-color: rgb(174, 229, 243);
   width: 100%;
   border-radius: 5px;
+  margin-bottom: 2%;
 }
 
 .hour {
@@ -50,6 +51,7 @@ textarea{
 input {
   background-color: rgb(210, 218, 243);
   width: 20%;
+  margin-left: 5%;
 }
 
 .card {
@@ -57,7 +59,7 @@ input {
   color: #000000;
   border-style: solid;
   border-color: #000000;
-  height: 35%;
+  height: 50%;
   width: 50%;
   display: flex;
   float: right;

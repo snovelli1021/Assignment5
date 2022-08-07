@@ -1,5 +1,6 @@
 var saveBtn = document.querySelector(".saveBtn");
 var cardSpan = document.querySelector(".card");
+var timeBlocks = document.querySelectorAll(".row")
 var task = document.querySelector("#task").value;
 
 var currentDT = moment().format("dddd MMM D, YYYY");
@@ -13,8 +14,22 @@ var currentTime = moment().format("h");
 $("#currentTime").text(currentTime);
 
 
-//document.querySelector(".row").className = "present"; 
 
+for (var i =0; i < timeBlocks.length; i++) {
+    currentTime = timeBlocks.className = "present"
+    console.log(timeBlocks);
+}
+
+  if (currentTime === timeBlocks) {
+    //red
+      document.querySelector(".row").className= "present";
+   }else if (currentTime > timeBlocks) {
+    //gray
+      document.querySelector(".row").className= "past";
+   }else { (currentTime < timeBlocks)
+    //green
+     document.querySelector(".row").className= "future";
+   }
 
 
 function displayTask() {
