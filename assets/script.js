@@ -1,7 +1,8 @@
 var saveBtn = document.querySelector(".saveBtn");
 var cardSpan = document.querySelector(".card");
-var timeBlocks = document.querySelectorAll(".row")
-var task = document.querySelector("#task").value;
+var timeBlock = document.querySelectorAll(".row")
+
+displayTask();
 
 var currentDT = moment().format("dddd MMM D, YYYY");
     console.log("Current Date: " + currentDT);
@@ -13,37 +14,41 @@ var currentTime = moment().format("h");
 
 $("#currentTime").text(currentTime);
 
+//Array.from turns node list of DOM Elements into an array
+var timeBlockArray = Array.from(timeBlock)
+//Checking to make sure my node list was made into an array
+console.log(timeBlockArray);
 
+function changeColor() {
+for (var i =0; i < timeBlockArray.length; i++) {
+ }
 
-for (var i =0; i < timeBlocks.length; i++) {
-    currentTime = timeBlocks.className = "present"
-    console.log(timeBlocks);
+   if (currentTime === timeBlockArray) {
+     //timeBlock row turns red
+       document.querySelector(".row").className= "present";
+    }else if (currentTime > timeBlockArray) {
+     //timeBlock row turns gray
+       document.querySelector(".row").className= "past";
+    }else { (currentTime < timeBlockArray)
+     //timeBlock row turns green
+      document.querySelector(".row").className= "future";
+    }
 }
 
-  if (currentTime === timeBlocks) {
-    //red
-      document.querySelector(".row").className= "present";
-   }else if (currentTime > timeBlocks) {
-    //gray
-      document.querySelector(".row").className= "past";
-   }else { (currentTime < timeBlocks)
-    //green
-     document.querySelector(".row").className= "future";
-   }
-
+changeColor();
 
 function displayTask() {
-
-    var task = localStorage.getItem("task");
-    cardSpan.textContent = task;
-    //checking to see if var task recieves a value
-    console.log(task);
+    var inputTask = localStorage.getItem("task");
+    cardSpan.textContent = inputTask;
+    //checking to see if var inputTask recieves a value
+    console.log(inputTask);
 }
 
 
 saveBtn.addEventListener("click", function(event) {
-    localStorage.setItem("task", task);
-    console.log(task);
     event.preventDefault();
+    var inputTask = document.querySelector("#task").value;
+    localStorage.setItem("task", inputTask);
+    console.log(inputTask);
     displayTask();
 });
