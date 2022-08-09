@@ -3,11 +3,10 @@ Building a work day scheduler that allows a user to type in a task and have it p
 
 
 Github Repository Link:
-
-
+https://github.com/snovelli1021/Assignment5
 
 Github Pages Link:
-
+https://snovelli1021.github.io/Assignment5/
 
 
 ![my screenshot](./assets/screenshot.jpg)
